@@ -110,5 +110,6 @@ def listen_document():
     doc_watch = doc_ref.on_snapshot(on_snapshot)
     # [END firestore_listen_document]
     # [END listen_document]
+    return
 
 listen_document()
