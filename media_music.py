@@ -81,6 +81,18 @@ music_ref.document(u'Sun and Stars').set(
     Music(u'Sun and Stars', u'Really Slow Motion', u'Elevation', 173, None,
          [u'Battlefield 1 - Trailer']).to_dict())        
 
+
+# Deleting a Document
+
+# # # db.collection(u'music').document(u'Sun and Stars').delete()
+
+#Delete a Field
+
+# # # music_ref = db.collection(u'music').document(u'How to Save a Life')
+# # # music_ref.update({
+# # #     u'artist': firestore.DELETE_FIELD
+# # # })
+
 # [START get_simple_query]
 # [START firestore_data_query]
 # Note: Use of CollectionRef stream() is prefered to get()
@@ -104,7 +116,7 @@ def listen_document():
             print(f'Received document snapshot: {doc.id}')
         # callback_done.set()
 
-    doc_ref = db.collection(u'cities').document(u'SF')
+    doc_ref = db.collection(u'music')
 
     # Watch the document
     doc_watch = doc_ref.on_snapshot(on_snapshot)
